@@ -38,7 +38,7 @@ function DocumentationBox(props) {
                <Link
                   className="documentation-knowledge-btn"
                   onClick={() => dispatch(BosqichId(props?.val?._id))}
-                  to={`${process.env.PUBLIC_URL}/document-details/${props?.val?._id}`}
+                  // to={`${process.env.PUBLIC_URL}/document-details/${props?.val?._id}`}
                >
                   View More
                </Link>

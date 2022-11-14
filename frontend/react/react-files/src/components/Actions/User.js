@@ -61,3 +61,35 @@ export const loadUser = () => async (dispatch) => {
       });
    }
 };
+
+export const registerUser = (name, email, password, photo) => async (dispatch) => {
+   //  const navigate = useNavigation();
+   try {
+      dispatch({
+         type: "RegisterRequest",
+      });
+
+      const { data } = await axios.post(
+         "/api/v1/register",
+         { name, email, password, photo },
+         {
+            headers: {
+               "Content-Type": "application/json",
+            },
+         }
+      );
+
+      dispatch({
+         type: "RegisterSuccess",
+         payload: data.user,
+      });
+
+     
+      // localStorage.setItem("profile", JSON.stringify({ ...data.user }));
+   } catch (error) {
+      dispatch({
+         type: "RegisterFailure",
+         payload: error,
+      });
+   }
+};

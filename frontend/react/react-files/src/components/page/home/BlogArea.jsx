@@ -14,10 +14,9 @@ function BlogArea() {
           <div className="row">
             <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
               <div className="section-title text-center mb-50">
-                <h1>Our Blog</h1>
+                <h1>Blog</h1>
                 <p>
-                  Fusce non volutpat arcu. Quisque ut est sapien. Curabitur eu
-                  nulla
+                  Foydali bloglar
                 </p>
               </div>
             </div>
@@ -37,7 +36,7 @@ function BlogArea() {
                   <div className="meta-wrap">
                     <div className="meta-item">
                       <p>
-                        <Link to={"#"}>Photography</Link>
+                        <Link to={"#"}>G'allachilik</Link>
                       </p>
                     </div>
                     <div className="meta-item">
@@ -55,20 +54,18 @@ function BlogArea() {
                         onClick={scrollTop}
                         to={`${process.env.PUBLIC_URL}/blog-details`}
                       >
-                        Should You Invest In Internal Knowledge Base For Your
-                        Company?
+                        G'allachili haqida yangi ma'lumotlar
                       </Link>
                     </h3>
                     <p>
-                      Aliquam finibus augue ac diam euismod, nec con sectetur
-                      erat dignissim. Pellentesque.
+                      G'allachilik  haqida eng so'ngi yangiliklar 
                     </p>
                   </div>
                   <div className="btn-wrap">
                     <Link
                       className="common-btn btn-style-5"
                       onClick={scrollTop}
-                      to={`${process.env.PUBLIC_URL}/blog-details`}
+                      to={`${process.env.PUBLIC_URL}/`}
                     >
                       Read more
                     </Link>
@@ -93,7 +90,7 @@ function BlogArea() {
                       <div className="meta-wrap">
                         <div className="meta-item">
                           <p>
-                            <Link to={"#"}>Woocommerce</Link>
+                            <Link to={"#"}>Paxtachilik</Link>
                           </p>
                         </div>
                         <div className="meta-item">
@@ -111,19 +108,18 @@ function BlogArea() {
                             onClick={scrollTop}
                             to={`${process.env.PUBLIC_URL}/blog-details`}
                           >
-                            Microsoft Q&amp;A graduates to General Availability!
+                            Yangi paxtaga oid yangiliklar
                           </Link>
                         </h3>
                         <p>
-                          Aliquam finibus augue ac diam euismod, nec con
-                          sectetur erat dignissim. Pellentesque.
+                          Bizning eng so'nggi paxta haqidagi yangiliklardan xabardor bo'ling
                         </p>
                       </div>
                       <div className="btn-wrap ">
                         <Link
                           className="common-btn btn-style-5"
                           onClick={scrollTop}
-                          to={`${process.env.PUBLIC_URL}/blog-details`}
+                          to={`${process.env.PUBLIC_URL}/`}
                         >
                           Read more
                         </Link>
@@ -146,7 +142,7 @@ function BlogArea() {
                       <div className="meta-wrap">
                         <div className="meta-item">
                           <p>
-                            <Link to={"#"}>Documentation</Link>
+                            <Link to={"#"}>poliz mahsulotlari</Link>
                           </p>
                         </div>
                         <div className="meta-item">
@@ -164,21 +160,18 @@ function BlogArea() {
                             onClick={scrollTop}
                             to={`${process.env.PUBLIC_URL}/blog-details`}
                           >
-                            Help and support articles about Microsoft Q&amp;A
-                            moved to Docs
+                            Poliz mahsulotlari haqida eng so'nggi ma'lumotlar
                           </Link>
                         </h3>
                         <p>
-                          Aliquam finibus augue ac diam euismod, nec con
-                          sectetur erat dignissim. Pellentesque . Nulla vitae
-                          justo enim. Morbi
+                          poliz ekinlari haqida eng so'nggim ma'lumotlardan xabardor bo'ling
                         </p>
                       </div>
                       <div className="btn-wrap">
                         <Link
                           className="common-btn btn-style-5"
                           onClick={scrollTop}
-                          to={`${process.env.PUBLIC_URL}/blog-details`}
+                          to={`${process.env.PUBLIC_URL}/`}
                         >
                           Read more
                         </Link>

@@ -83,8 +83,7 @@ function AboutArea() {
                            <div className="about-content">
                               <h3>sabzavot</h3>
                               <p>
-                                 It is a long established fact that looking at on this hav’n its
-                                 layout.
+                                 Sabzavotlarni zararkunandalardan ximoyalash va yaxshi xosil olish
                               </p>
                            </div>
                         </div>
@@ -98,8 +97,7 @@ function AboutArea() {
                            <div className="about-content">
                               <h3>poliz</h3>
                               <p>
-                                 It is a long established fact that looking at on this hav’n its
-                                 layout.
+                                 Poliz mahsulotlaridan yaxshi foydalanish va ularni yaxshi parvarish qilish
                               </p>
                            </div>
                         </div>

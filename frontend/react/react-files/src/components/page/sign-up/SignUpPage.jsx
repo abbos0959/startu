@@ -5,7 +5,7 @@ import SignUpWapper from "./SignUpWapper";
 function SignUpPage() {
   return (
     <>
-      <Breadcrumb pageName="Sign Up" pageTitle=" Sing Up" />
+      
       <SignUpWapper />
     </>
   );

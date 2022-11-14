@@ -4,12 +4,12 @@ import DocumentationBox from "../../common/DocumentationBox";
 function KnowledgeBaseArea() {
    return (
       <>
-         <div className="knowledge-area mt-100" id="knw">
+         {/* <div className="knowledge-area mt-100" id="knw">
             <div className="container">
                <div className="row">
                   <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                      <div className="section-title text-center mb-50">
-                        <h1>Knowledge Base</h1>
+                        <h1>Bo'limlar</h1>
                         <p>Fusce non volutpat arcu. Quisque ut est sapien. Curabitur eu nulla</p>
                      </div>
                   </div>
@@ -29,7 +29,7 @@ function KnowledgeBaseArea() {
                   </div>
                </div>
             </div>
-         </div>
+         </div> */}
       </>
    );
 }

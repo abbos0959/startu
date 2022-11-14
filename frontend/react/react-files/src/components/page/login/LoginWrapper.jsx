@@ -22,10 +22,8 @@ function LoginWrapper() {
    };
 
    const shoot = async () => {
-      
       console.log(email);
       dispatch(loginUser(email, password));
-      
    };
    return (
       <>
@@ -67,9 +65,12 @@ function LoginWrapper() {
                                  placeholder="Password"
                               />
                               <i className="bi bi-eye field-icon toggle-password" />
-                              <button className=" mt-5" onClick={shoot}>
-                                 logincha
-                              </button>
+                              <Link to="/">
+                                 {" "}
+                                 <button className=" mt-5" onClick={shoot}>
+                                    LOGIN
+                                 </button>
+                              </Link>
                               <Link to={"#"}>Parolni Unutdingizmi</Link>
                            </form>
                            <h3>OR</h3>

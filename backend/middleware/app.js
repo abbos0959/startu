@@ -16,8 +16,8 @@ const ratingRouter = require("../router/rating");
 
 const levelRouter = require("../router/levelRouter");
 app.use(express.json());
-app.use(expressupload());
-app.use(express.static(path.resolve(__dirname, "uploads")));
+// app.use(expressupload());
+app.use(express.static(path.join(__dirname, "../uploads")));
 // app.use(express.urlencoded({ extended: true }));
 app.use(cookie());
 app.use(cors());

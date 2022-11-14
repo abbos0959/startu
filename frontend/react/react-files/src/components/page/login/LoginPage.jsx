@@ -5,7 +5,7 @@ import LoginWrapper from "./LoginWrapper";
 function LoginPage() {
   return (
     <>
-      <Breadcrumb pageName="Login" pageTitle=" Login" />
+      
       <LoginWrapper />
     </>
   );

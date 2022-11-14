@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
+// import { useDispatch } from "react-redux";
+import { registerUser } from "../../Actions/User";
 
 function SignUpWapper() {
+   const [name, setname] = useState("");
+   const [email, setemail] = useState("");
+   const [password, setpassword] = useState("");
+   const [photo, setphoto] = useState("");
+
+   const dispatch = useDispatch();
    const handleSubmit = (e) => {
       e.preventDefault();
       console.log("salom");
+   };
+
+   const handle = () => {
+      dispatch(registerUser(name, email, password, photo));
    };
    return (
       <>
@@ -19,7 +31,7 @@ function SignUpWapper() {
                         <div className="input-card-title">
                            <h2>Sign Up</h2>
                            <p>
-                              Do you already have an account?
+                              Kirish
                               <Link
                                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                                  to={`${process.env.PUBLIC_URL}/login`}
@@ -30,8 +42,35 @@ function SignUpWapper() {
                         </div>
                         <div className="input-card-box mt-100">
                            <form onSubmit={handleSubmit} action="index.html">
-                              <input type="email" placeholder="Enter Your Email" />
-                              <button className="mt-50">Sign Up</button>
+                              <input
+                                 onChange={(e) => setname(e.target.value)}
+                                 value={name}
+                                 type="text"
+                                 placeholder="Ism Kiriting"
+                              />
+                              <input
+                                 onChange={(e) => setemail(e.target.value)}
+                                 value={email}
+                                 type="email"
+                                 placeholder=" Email kiriting "
+                              />
+                              <input
+                                 onChange={(e) => setpassword(e.target.value)}
+                                 value={password}
+                                 type="password"
+                                 placeholder=" parol kiriting"
+                              />
+                              <input
+                                 onChange={(e) => setphoto(e.target.value)}
+                                 value={photo}
+                                 type="file"
+                                 placeholder="file"
+                              />
+                              <Link to="/">
+                                 <button onClick={handle} className="mt-50">
+                                    Sign Up
+                                 </button>
+                              </Link>
                            </form>
                            <h3>OR</h3>
                            <div className="input-card-social">
