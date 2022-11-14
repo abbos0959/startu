@@ -8,23 +8,23 @@ const getAllContent = catchErrorAsync(async (req, res, next) => {
       .populate({ path: "levelId", select: "name  -_id" })
       .populate({ path: "littleId", select: "name " })
       .populate({ path: "bigId", select: "name " })
-      .populate({ path: "salom", select: "rating userId -_id -contentId" })
-      .exec(function (err, showMovie) {
-         if (err) {
-            console.log(err);
-         } else {
-            console.log(
-               "sasasasas",
-               showMovie.map((val) => val.salom.map((r) => r.rating.flat()))
-            );
-            var total = 0;
-            // for (var i = 0; i < showMovie.comments.length; i++) {
-            //    total += showMovie.comments[i].rating;
-            // }
-            // var avg = total / showMovie.comments.length;
-            // res.render("show", { movie: showMovie, ratingAverage: avg });
-         }
-      });
+      .populate({ path: "salom", select: "rating userId -_id -contentId" });
+   // .exec(function (err, showMovie) {
+   //    if (err) {
+   //       console.log(err);
+   //    } else {
+   //       console.log(
+   //          "sasasasas",
+   //          showMovie.map((val) => val.salom.map((r) => r.rating.flat()))
+   //       );
+   //       var total = 0;
+   //       // for (var i = 0; i < showMovie.comments.length; i++) {
+   //       //    total += showMovie.comments[i].rating;
+   //       // }
+   //       // var avg = total / showMovie.comments.length;
+   //       // res.render("show", { movie: showMovie, ratingAverage: avg });
+   //    }
+   // });
 
    res.status(200).json({ success: true, data });
 });
@@ -72,4 +72,13 @@ const updateContent = catchErrorAsync(async (req, res, next) => {
    });
 });
 
-module.exports = { getAllContent, createContent, deleteContent, updateContent };
+const getByIdContent = catchErrorAsync(async (req, res, next) => {
+   const data = await ContentMOdel.findById(req.params.id);
+
+   if (!data) {
+      return next(new AppError("bunday  id mavjud mavjud emas", 404));
+   }
+   res.status(200).json({ success: true, data });
+});
+
+module.exports = { getByIdContent, getAllContent, createContent, deleteContent, updateContent };

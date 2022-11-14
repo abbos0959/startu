@@ -6,7 +6,7 @@ import ForumWrapArea from "./ForumWrapArea";
 function ForumQuestionPage() {
   return (
     <>
-      <Breadcrumb pageName="Forum Qsn" pageTitle="Forum Qsn" />
+      {/* <Breadcrumb pageName="Forum Qsn" pageTitle="Forum Qsn" /> */}
       <ForumWrapArea />
     </>
   );

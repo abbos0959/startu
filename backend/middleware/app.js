@@ -1,6 +1,7 @@
 const express = require("express");
 const errorController = require("../controller/errorController");
 const app = express();
+const path = require("path");
 const cookie = require("cookie-parser");
 const bodyParser = require("body-parser");
 const userRouter = require("../router/user");
@@ -16,6 +17,7 @@ const ratingRouter = require("../router/rating");
 const levelRouter = require("../router/levelRouter");
 app.use(express.json());
 app.use(expressupload());
+app.use(express.static(path.resolve(__dirname, "uploads")));
 // app.use(express.urlencoded({ extended: true }));
 app.use(cookie());
 app.use(cors());

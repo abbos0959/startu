@@ -23,9 +23,10 @@ const registerUser = catchErrorAsync(async (req, res, next) => {
       password,
    });
 
-   // if (req.file) {
-   //    user.photo = req.file.path;
-   // }
+   if (req.file) {
+      user.photo = req.file.path;
+   }
+   await user.save();
 
    jwtToken(user, 200, res);
 });

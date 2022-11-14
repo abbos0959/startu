@@ -22,6 +22,7 @@ router
       Isauthentication,
       authoriseRoles("ADMIN"),
       LittlecategoryController.UpdateLittleCategory
-   );
+   )
+   .get(LittlecategoryController.getByIdLittle);
 
 module.exports = router;

@@ -3,12 +3,11 @@ import Breadcrumb from "../../common/Breadcrumb";
 import ContactWrapper from "./ContactWrapper";
 
 function ContactPage() {
-  return (
-    <>
-      <Breadcrumb pageName="Contact" pageTitle ="Contact" />
-      <ContactWrapper />
-    </>
-  );
+   return (
+      <>
+         <ContactWrapper />
+      </>
+   );
 }
 
 export default ContactPage;

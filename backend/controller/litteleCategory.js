@@ -6,7 +6,8 @@ const littleCategory = require("../models/littleCategory");
 const getAllLittleCategory = catchErrorAsync(async (req, res, next) => {
    const data = await littleCategory
       .find()
-      .populate({ path: "bigcategoryId", select: "name photo " }).populate("little");
+      .populate({ path: "bigcategoryId", select: "name photo " })
+      .populate("little");
 
    if (!data) {
       return next(new AppError("hozircha categoriyalar mavjud emas", 404));
@@ -61,9 +62,24 @@ const UpdateLittleCategory = catchErrorAsync(async (req, res, next) => {
    });
 });
 
+const getByIdLittle = catchErrorAsync(async (req, res, next) => {
+   const data = await littleCategory
+      .findById(req.params.id)
+      .populate({ path: "bigcategoryId", select: "name photo " })
+      .populate("little");
+   if (!data) {
+      return next(new AppError("bunday idli littlecategory mavjud emas", 404));
+   }
+
+   res.status(200).json({
+      success: true,
+      data,
+   });
+});
 module.exports = {
    getAllLittleCategory,
    createLittleCategory,
    deleteLittleCategory,
    UpdateLittleCategory,
+   getByIdLittle,
 };

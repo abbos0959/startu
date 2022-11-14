@@ -6,7 +6,7 @@ const bigCategoryModel = require("../models/bigCategory");
 const getAllBigCategory = catchErrorAsync(async (req, res, next) => {
    const bigcategory = await bigCategoryModel
       .find()
-      .populate({ path: "littlecategory", select: "name photo -bigcategoryId -_id" });
+      .populate({ path: "littlecategory", select: "name photo -bigcategoryId " });
 
    if (!bigcategory) {
       return next(new AppError("hozircha categoriyalar mavjud emas", 404));
@@ -60,4 +60,23 @@ const UpdateBigCategory = catchErrorAsync(async (req, res, next) => {
    });
 });
 
-module.exports = { getAllBigCategory, createBigCategory, deleteBigCategory, UpdateBigCategory };
+const getByIdCategoryBig = catchErrorAsync(async (req, res, next) => {
+   const data = await bigCategoryModel
+      .findById(req.params.id)
+      .populate({ path: "littlecategory", select: "name photo  " });
+   if (!data) {
+      return next(new AppError("bunday idli user mavjud emas", 404));
+   }
+   res.status(200).json({
+      success: true,
+      data,
+   });
+});
+
+module.exports = {
+   getAllBigCategory,
+   getByIdCategoryBig,
+   createBigCategory,
+   deleteBigCategory,
+   UpdateBigCategory,
+};

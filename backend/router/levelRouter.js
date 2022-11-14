@@ -11,6 +11,7 @@ router
 router
    .route("/level/:id")
    .delete(Isauthentication, authoriseRoles("ADMIN"), LevelController.deleteLevel)
-   .patch(Isauthentication, authoriseRoles("ADMIN"), LevelController.updateLevel);
+   .patch(Isauthentication, authoriseRoles("ADMIN"), LevelController.updateLevel)
+   .get(LevelController.getByIdLevel);
 
 module.exports = router;

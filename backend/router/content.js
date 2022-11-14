@@ -14,5 +14,6 @@ router
 router
    .route("/content/:id")
    .delete(Isauthentication, authoriseRoles("ADMIN"), ContentController.deleteContent)
-   .patch(Isauthentication, authoriseRoles("ADMIN"), ContentController.updateContent);
+   .patch(Isauthentication, authoriseRoles("ADMIN"), ContentController.updateContent)
+   .get(ContentController.getByIdContent);
 module.exports = router;

@@ -2,6 +2,8 @@ import { createReducer } from "@reduxjs/toolkit";
 
 const initialState = {
    isauth: false,
+   loading: false,
+   user: null,
 };
 
 export const userReducer = createReducer(initialState, {
@@ -12,6 +14,7 @@ export const userReducer = createReducer(initialState, {
       state.loading = false;
       state.user = action.payload;
       state.isauth = true;
+      // localStorage.setItem("profile", JSON.stringify({ ...action.payload }));
    },
    LoginFailure: (state, action) => {
       state.loading = false;

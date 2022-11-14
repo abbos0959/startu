@@ -1,7 +1,7 @@
 import axios from "axios";
-import { useNavigation } from "react-router-dom";
+import { useNavigation, Redirect } from "react-router-dom";
 export const loginUser = (email, password) => async (dispatch) => {
-  //  const navigate = useNavigation();
+   //  const navigate = useNavigation();
    try {
       dispatch({
          type: "LoginRequest",
@@ -21,6 +21,11 @@ export const loginUser = (email, password) => async (dispatch) => {
          type: "LoginSuccess",
          payload: data.user,
       });
+
+      if (data.user) {
+         return <Redirect to="/" />;
+      }
+      // localStorage.setItem("profile", JSON.stringify({ ...data.user }));
    } catch (error) {
       dispatch({
          type: "LoginFailure",

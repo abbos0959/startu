@@ -23,6 +23,7 @@ router
       authoriseRoles("ADMIN"),
       upload.single("photo"),
       bigcategoryController.UpdateBigCategory
-   );
+   )
+   .get(bigcategoryController.getByIdCategoryBig);
 
 module.exports = router;

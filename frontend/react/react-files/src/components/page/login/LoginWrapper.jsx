@@ -22,6 +22,7 @@ function LoginWrapper() {
    };
 
    const shoot = async () => {
+      
       console.log(email);
       dispatch(loginUser(email, password));
       

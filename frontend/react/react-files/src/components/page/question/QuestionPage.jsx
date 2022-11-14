@@ -4,13 +4,12 @@ import TopicSectionArea from "./TopicSectionArea";
 import Breadcrumb from "../../common/Breadcrumb";
 
 function QuestionPage() {
-  return (
-    <>
-    <Breadcrumb pageName="Ask A Question?" pageTitle="Ask A Question?" />
-        <AskFromArea />
-        <TopicSectionArea />
+   return (
+      <>
+         <AskFromArea />
+         <TopicSectionArea />
       </>
-  )
+   );
 }
 
-export default QuestionPage
+export default QuestionPage;

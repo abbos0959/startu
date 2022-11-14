@@ -5,7 +5,7 @@ import DocumentsWrapArea from "./DocumentsWrapArea";
 function DocumentsPage() {
   return (
     <>
-      <Breadcrumb pageName="Documents" pageTitle="Documents" />
+      {/* <Breadcrumb pageName="Documents" pageTitle="Documents" /> */}
       <DocumentsWrapArea />
     </>
   );

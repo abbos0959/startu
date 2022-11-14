@@ -5,7 +5,7 @@ import DocumentDetailsWrapper from "./DocumentDetailsWrapper";
 function DocumentsDetailsPage() {
   return (
     <>
-     <Breadcrumb pageName="Document Details" pageTitle="Document Details" />
+     {/* <Breadcrumb pageName="Document Details" pageTitle="Document Details" /> */}
       <DocumentDetailsWrapper />
     </>
   );

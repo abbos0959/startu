@@ -5,7 +5,7 @@ import TopicDetailsArea from "./TopicDetailsArea";
 function TopicDetailsPage() {
   return (
     <>
-      <Breadcrumb pageName="Topic Details" pageTitle="Topic Details" />
+      {/* <Breadcrumb pageName="Topic Details" pageTitle="Topic Details" /> */}
       <TopicDetailsArea />
     </>
   );

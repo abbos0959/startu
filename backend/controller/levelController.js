@@ -4,7 +4,7 @@ const AppError = require("../utils/appError");
 const LevelModel = require("../models/levelModel");
 
 const getAllLevel = catchErrorAsync(async (req, res, next) => {
-   const data = await LevelModel.find().populate("littleId");
+   const data = await LevelModel.find().populate("littleId").populate("le");
    res.status(200).json({ success: true, data });
 });
 
@@ -40,5 +40,15 @@ const updateLevel = catchErrorAsync(async (req, res, next) => {
       message: "level update",
    });
 });
+const getByIdLevel = catchErrorAsync(async (req, res) => {
+   const data = await LevelModel.findById(req.params.id).populate("littleId").populate("le");
+   if (!data) {
+      return next(new AppError("bunday id mavjud emas", 404));
+   }
+   res.status(200).json({
+      success: true,
+      data,
+   });
+});
 
-module.exports = { getAllLevel, createLevel, deleteLevel, updateLevel };
+module.exports = { getAllLevel, createLevel, deleteLevel, updateLevel, getByIdLevel };

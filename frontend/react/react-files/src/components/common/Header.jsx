@@ -1,5 +1,7 @@
 import React, { useEffect, useReducer, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { yoriqId } from "../Actions/yoriqId";
 const initalHeaderState = { activeMenu: "", scrllTop: "" };
 const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 function reducer(state, action) {
@@ -21,6 +23,11 @@ function reducer(state, action) {
    }
 }
 function Header() {
+   const dis = useDispatch();
+   const { isauth } = useSelector((state) => state.user);
+   const { user } = useSelector((state) => state.user);
+   const { yoriq } = useSelector((state) => state.yoriqnoma);
+
    // Sticky Menu Area
    useEffect(() => {
       window.addEventListener("scroll", isSticky);
@@ -53,6 +60,7 @@ function Header() {
          SetMobileSidebar(false);
       }
    };
+
    return (
       <>
          <header>
@@ -62,11 +70,12 @@ function Header() {
                      <div className="row align-items-center">
                         <div className="col-xl-2 col-lg-2 col-sm-6 col-6">
                            <div className="logo text-left">
-                              <Link onClick={scrollTop} to={`${process.env.PUBLIC_URL}/`}>
-                                 <img
-                                    src={process.env.PUBLIC_URL + "/images/magicAgro.png"}
-                                    alt="logo"
-                                 />
+                              <Link
+                                 style={{ cursor: "pointer" }}
+                                 onClick={scrollTop}
+                                 to={`${process.env.PUBLIC_URL}/`}
+                              >
+                                 <h2> MagicDocs</h2>
                               </Link>
                            </div>
                         </div>
@@ -94,43 +103,16 @@ function Header() {
                                  </Link>
                               </div>
                               <ul>
-                                 <li className="has-child-menu">
+                                 <li className="">
                                     <Link
                                        onClick={() => dispatch({ type: "homeOne" })}
-                                       to={"#"}
+                                       to={"/"}
                                        className={
                                           state.activeMenu === "homeOne" ? "header-active1" : ""
                                        }
                                     >
                                        Bosh sahifa
                                     </Link>
-                                    {/* <i className="fl flaticon-plus">+</i> */}
-                                    {/* <ul
-                                       className={
-                                          state.activeMenu === "homeOne"
-                                             ? "sub-menu  d-block"
-                                             : "sub-menu d-none"
-                                       }
-                                    >
-                                       <li>
-                                          <NavLink
-                                             onClick={() =>
-                                                dispatch({ type: "homeOne", scrollTop })
-                                             }
-                                             to={"/"}
-                                          >
-                                             Bosh sahifa 1
-                                          </NavLink>
-                                       </li>
-                                       <li>
-                                          <NavLink
-                                             onClick={scrollTop}
-                                             to={`${process.env.PUBLIC_URL}/home-two`}
-                                          >
-                                             Bosh sahifa 2
-                                          </NavLink>
-                                       </li>
-                                    </ul> */}
                                  </li>
                                  <li className="has-child-menu">
                                     <Link
@@ -151,12 +133,18 @@ function Header() {
                                        }
                                     >
                                        <li>
-                                          <NavLink
-                                             onClick={() => dispatch({ type: "docs", scrollTop })}
-                                             to={`${process.env.PUBLIC_URL}/documents`}
-                                          >
-                                             Bo'limlar
-                                          </NavLink>
+                                          {yoriq ? (
+                                             yoriq?.map((val) => (
+                                                <NavLink
+                                                   onClick={() => dis(yoriqId(val?._id))}
+                                                   to={`${process.env.PUBLIC_URL}/documents/${val?._id}`}
+                                                >
+                                                   {val?.name}
+                                                </NavLink>
+                                             ))
+                                          ) : (
+                                             <p>loading</p>
+                                          )}
                                        </li>
                                        <li>
                                           {/* <NavLink
@@ -250,50 +238,20 @@ function Header() {
                                        </li>
                                     </ul>
                                  </li> */}
-                                 <li className="has-child-menu">
-                                    <Link
-                                       to={"#"}
-                                       onClick={() => dispatch({ type: "blog" })}
-                                       className={
-                                          state.activeMenu === "blog" ? "header-active1" : ""
-                                       }
-                                    >
-                                       Blog
-                                    </Link>
-                                    <i className="fl flaticon-plus">+</i>
-                                    <ul
-                                       className={
-                                          state.activeMenu === "blog"
-                                             ? "sub-menu  d-block"
-                                             : "sub-menu d-none"
-                                       }
-                                    >
-                                       <li>
-                                          <NavLink
-                                             onClick={() => dispatch({ type: "blog", scrollTop })}
-                                             to={`${process.env.PUBLIC_URL}/blog-grid`}
-                                          >
-                                             Blog Grid
-                                          </NavLink>
-                                       </li>
-                                       <li>
-                                          <NavLink
-                                             onClick={() => dispatch({ type: "blog", scrollTop })}
-                                             to={`${process.env.PUBLIC_URL}/blog-sidebar`}
-                                          >
-                                             Blog Sidebar
-                                          </NavLink>
-                                       </li>
-                                       <li>
-                                          <NavLink
-                                             onClick={() => dispatch({ type: "blog", scrollTop })}
-                                             to={`${process.env.PUBLIC_URL}/blog-details`}
-                                          >
-                                             Blog Details
-                                          </NavLink>
-                                       </li>
-                                    </ul>
-                                 </li>
+                                 {user?.role === "ADMIN" && (
+                                    <li className="has-child-menu">
+                                       <Link
+                                          to={"/yo'riqnoma"}
+                                          onClick={() => dispatch({ type: "blog" })}
+                                          className={
+                                             state.activeMenu === "blog" ? "header-active1" : ""
+                                          }
+                                       >
+                                          Yo'riqnoma qo'shish
+                                       </Link>
+                                    </li>
+                                 )}
+
                                  <li>
                                     <NavLink
                                        onClick={() => dispatch({ type: "contact", scrollTop })}
@@ -311,21 +269,30 @@ function Header() {
                            </nav>
                         </div>
                         <div className="col-xl-3 col-lg-3 d-none d-lg-block">
-                           <div className="menu-btn-wrap">
-                              <Link className="common-btn btn-style-6" to={"/sign-up"}>
-                                 Ro'yhatdan o'tish
-                              </Link>
-                              <Link className="common-btn btn-style-6" to={"/login"}>
-                                 Kirish
-                              </Link>
-                              <div className="menu-toggle-btn">
-                                 <ul onClick={handleSidebar}>
-                                    <li />
-                                    <li />
-                                    <li />
-                                 </ul>
+                           {isauth ? (
+                              <div style={{ display: "flex", alignItems: "center" }}>
+                                 <Link className="common-btn btn-style-6" to={"/logout"}>
+                                    Logout
+                                 </Link>
+                                 <h5 style={{ marginLeft: "10px" }}>{user.name}</h5>
                               </div>
-                           </div>
+                           ) : (
+                              <div className="menu-btn-wrap">
+                                 <Link className="common-btn btn-style-6" to={"/sign-up"}>
+                                    Ro'yhatdan o'tish
+                                 </Link>
+                                 <Link className="common-btn btn-style-6" to={"/login"}>
+                                    Kirish
+                                 </Link>
+                                 <div className="menu-toggle-btn">
+                                    <ul onClick={handleSidebar}>
+                                       <li />
+                                       <li />
+                                       <li />
+                                    </ul>
+                                 </div>
+                              </div>
+                           )}
                         </div>
                      </div>
                   </div>
