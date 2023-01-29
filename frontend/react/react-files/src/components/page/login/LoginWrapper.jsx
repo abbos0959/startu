@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 
 function LoginWrapper() {
+   const auth = useSelector((state) => state.isAuth);
+
    const history = useHistory();
    const dispatch = useDispatch();
    const haldleSubmit = (e) => {
@@ -23,8 +25,9 @@ function LoginWrapper() {
 
    const shoot = async () => {
       console.log(email);
-      dispatch(loginUser(email, password));
+      dispatch(loginUser(email, password, history));
    };
+
    return (
       <>
          <div className="sign-up mt-100 pb-100">
@@ -65,8 +68,7 @@ function LoginWrapper() {
                                  placeholder="Password"
                               />
                               <i className="bi bi-eye field-icon toggle-password" />
-                              <Link to="/">
-                                 {" "}
+                              <Link>
                                  <button className=" mt-5" onClick={shoot}>
                                     LOGIN
                                  </button>

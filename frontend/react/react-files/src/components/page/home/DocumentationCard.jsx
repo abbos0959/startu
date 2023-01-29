@@ -16,8 +16,7 @@ function DocumentationCard(props) {
                   </Link>
                </h3>
                <p>
-                  Paxta va G'alla mahsulotlaridan sifatli va yaxshi xosil olish uchun albatta uning
-                  agrotexnik ishlov berish qoidalariga rioya qilish kerak
+                 {props.text}
                </p>
                <ul>
                   <li>

@@ -22,7 +22,7 @@ function HomeOneFooter() {
                               </div>
                               <div className="content">
                                  <p>
-                                    Bu platforma magicAgro deb nomlanib sizning agrotexnik
+                                    Bu platforma MagicAgro deb nomlanib sizning 
                                     ilmingizni oshiradi.
                                  </p>
                               </div>

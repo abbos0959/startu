@@ -14,7 +14,7 @@ export const userReducer = createReducer(initialState, {
       state.loading = false;
       state.user = action.payload;
       state.isauth = true;
-      // localStorage.setItem("profile", JSON.stringify({ ...action.payload }));
+      localStorage.setItem("token", JSON.stringify({ ...action.payload }));
    },
    LoginFailure: (state, action) => {
       state.loading = false;

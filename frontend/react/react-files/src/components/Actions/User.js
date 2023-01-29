@@ -1,36 +1,37 @@
 import axios from "axios";
-import { useNavigation, Redirect } from "react-router-dom";
-export const loginUser = (email, password) => async (dispatch) => {
-   //  const navigate = useNavigation();
+import { useCookies } from "react-cookie";
+
+import React from "react";
+import { useNavigation, Redirect, useHistory } from "react-router-dom";
+
+export const loginUser = (email, password, history) => async (dispatch) => {
    try {
       dispatch({
          type: "LoginRequest",
       });
 
       const { data } = await axios.post(
-         "/api/v1/login",
+         "http://localhost:8000/api/v1/login",
          { email, password },
          {
-            headers: {
-               "Content-Type": "application/json",
-            },
+            withCredentials: true,
          }
       );
+      console.log(data);
 
       dispatch({
          type: "LoginSuccess",
          payload: data.user,
       });
 
-      if (data.user) {
-         return <Redirect to="/" />;
-      }
-      // localStorage.setItem("profile", JSON.stringify({ ...data.user }));
+      localStorage.setItem("token", JSON.stringify(data));
+      history.push("/");
    } catch (error) {
       dispatch({
          type: "LoginFailure",
          payload: error,
       });
+      alert(error.message);
    }
 };
 
@@ -41,7 +42,7 @@ export const loadUser = () => async (dispatch) => {
       });
 
       const { data } = await axios.get(
-         "/api/v1/me",
+         "http://localhost:8000/api/v1/me",
 
          {
             headers: {
@@ -54,6 +55,7 @@ export const loadUser = () => async (dispatch) => {
          type: "LoadUserSuccess",
          payload: data.user,
       });
+      localStorage.setItem("token", data.user);
    } catch (error) {
       dispatch({
          type: "LoadUserFailure",
@@ -63,14 +65,13 @@ export const loadUser = () => async (dispatch) => {
 };
 
 export const registerUser = (name, email, password, photo) => async (dispatch) => {
-   //  const navigate = useNavigation();
    try {
       dispatch({
          type: "RegisterRequest",
       });
 
       const { data } = await axios.post(
-         "/api/v1/register",
+         "http://localhost:8000/api/v1/register",
          { name, email, password, photo },
          {
             headers: {
@@ -83,9 +84,6 @@ export const registerUser = (name, email, password, photo) => async (dispatch) =
          type: "RegisterSuccess",
          payload: data.user,
       });
-
-     
-      // localStorage.setItem("profile", JSON.stringify({ ...data.user }));
    } catch (error) {
       dispatch({
          type: "RegisterFailure",

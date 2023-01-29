@@ -9,7 +9,7 @@ export const Content = (id) => async (dispatch) => {
       });
 
       const { data } = await axios.get(
-         `/api/v1/level/${id}`,
+         `http://localhost:8000/api/v1/level/${id}`,
 
          {
             headers: {

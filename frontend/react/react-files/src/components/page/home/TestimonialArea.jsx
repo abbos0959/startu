@@ -90,9 +90,9 @@ function TestimonialArea() {
                         <div className="testimonial-content-slide-box">
                            <h2>Bizning mijozlarimiz biz haqimizda qanday fikrda?</h2>
                            <p>
-                              Assalomu alaykum men ushbu MAgicAgro tizimidan foydalanib o'z
+                              Assalomu alaykum men ushbu MagicAgro tizimidan foydalanib o'z
                               hosilimni to'g'ri parvarish qilmoqdaman .Avvallari hosilimni juda ko'p
-                              qismi nobud bo'lar edi hozir esa natijalar juda ham yaxshi MAgicAgroga
+                              qismi nobud bo'lar edi hozir esa natijalar juda ham yaxshi MagicAgroga
                               katta rahmat
                            </p>
                            <h3>Jabborov Mamarayim </h3>
@@ -101,13 +101,13 @@ function TestimonialArea() {
                         <div className="testimonial-content-slide-box">
                            <h2>Bizning mijozlarimiz biz haqimizda qanday fikrda??</h2>
                            <p>
-                           Assalomu alaykum men ushbu MAgicAgro tizimidan foydalanib o'z
+                              Assalomu alaykum men ushbu MagicAgro tizimidan foydalanib o'z
                               hosilimni to'g'ri parvarish qilmoqdaman .Avvallari hosilimni juda ko'p
-                              qismi nobud bo'lar edi hozir esa natijalar juda ham yaxshi MAgicAgroga
+                              qismi nobud bo'lar edi hozir esa natijalar juda ham yaxshi MagicAgroga
                               katta rahmat
                            </p>
-                           <h3>Halilov MIrza</h3>
-                           <span> FArg'onalik fermer</span>
+                           <h3>Halilov Mirza</h3>
+                           <span> Farg'onalik fermer</span>
                         </div>
                      </Slider>
                   </div>

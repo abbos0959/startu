@@ -43,7 +43,7 @@ function MainBanner() {
                   <div className="col-xl-10 col-lg-12 col-md-12 col-sm-12 col-12">
                      <div className="hero-content text-center">
                         <h1>MagicDocs</h1>
-                        <p>Savollaringizni bizga yo'llang</p>
+                        <p>Muammolaringizga oson yechimlar</p>
                         <div className="hero-form">
                            <form onSubmit={(e) => e.preventDefault()} className="form-content">
                               <div className="form-input-area">

@@ -7,7 +7,7 @@ export const loadYoriq = () => async (dispatch) => {
       });
 
       const { data } = await axios.get(
-         "/api/v1/category",
+         "http://localhost:8000/api/v1/category",
 
          {
             headers: {
@@ -35,15 +35,7 @@ export const AddYoriq = (name, photo) => async (dispatch) => {
          type: "YoriqRequest",
       });
 
-      const { data } = await axios.post(
-         "/api/v1/category",
-         { name, photo },
-         {
-            headers: {
-               "Content-Type": "application/json",
-            },
-         }
-      );
+      const { data } = await axios.post("http://localhost:8000/api/v1/category", { name, photo });
 
       dispatch({
          type: "YoriqSuccess",

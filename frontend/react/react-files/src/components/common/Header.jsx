@@ -133,27 +133,27 @@ function Header() {
                                        }
                                     >
                                        <li>
-                                          {yoriq ? (
-                                             yoriq?.map((val) => (
-                                                <NavLink
-                                                   onClick={() => dis(yoriqId(val?._id))}
-                                                   to={`${process.env.PUBLIC_URL}/documents/${val?._id}`}
-                                                >
-                                                   {val?.name}
-                                                </NavLink>
-                                             ))
-                                          ) : (
-                                             <p>loading</p>
-                                          )}
+                                          {/* <Link to="/ish">
+                                             <li>Ish O'rinlari</li>
+                                          </Link>
+                                          <Link to="/tex">
+                                             <li>Texnikalar</li>
+                                          </Link> */}
+                                          <a href="http://my.vetgov.uz/opendata/7.pdf">
+                                             <li>Chorvachilik</li>
+                                          </a>
+                                          <a href="http://my.vetgov.uz/opendata/9.pdf">
+                                             <li>Parrandachilik</li>
+                                          </a>
+                                          <a href="http://my.vetgov.uz/opendata/4.pdf">
+                                             <li>Tuyaqushchilik</li>
+                                          </a>
+                                          <a href=" http://my.vetgov.uz/opendata/6.pdf">
+                                             <li>Qoramolchilik</li>
+                                          </a>
                                        </li>
-                                       <li>
-                                          {/* <NavLink
-                                             onClick={() => dispatch({ type: "docs", scrollTop })}
-                                             to={`${process.env.PUBLIC_URL}/document-details`}
-                                          >
-                                             Document Details
-                                          </NavLink> */}
-                                       </li>
+
+                                       <li></li>
                                     </ul>
                                  </li>
                                  <li className="has-child-menu">
@@ -193,51 +193,7 @@ function Header() {
                                        </li>
                                     </ul>
                                  </li>
-                                 {/* <li className="has-child-menu">
-                                    <Link
-                                       to={"#"}
-                                       onClick={() => dispatch({ type: "topic" })}
-                                       className={
-                                          state.activeMenu === "topic" ? "header-active1" : ""
-                                       }
-                                    >
-                                       Forum
-                                    </Link>
-                                    <i className="fl flaticon-plus">+</i>
-                                    <ul
-                                       className={
-                                          state.activeMenu === "topic"
-                                             ? "sub-menu  d-block"
-                                             : "sub-menu d-none"
-                                       }
-                                    >
-                                       <li>
-                                          <NavLink
-                                             onClick={scrollTop}
-                                             to={`${process.env.PUBLIC_URL}/topic`}
-                                          >
-                                             Topic
-                                          </NavLink>
-                                       </li>
-                                       <li />
-                                       <li>
-                                          <NavLink
-                                             onClick={() => dispatch({ type: "topic", scrollTop })}
-                                             to={`${process.env.PUBLIC_URL}/forum-q`}
-                                          >
-                                             Forum Q.
-                                          </NavLink>
-                                       </li>
-                                       <li>
-                                          <NavLink
-                                             onClick={() => dispatch({ type: "topic", scrollTop })}
-                                             to={`${process.env.PUBLIC_URL}/topic-details`}
-                                          >
-                                             Topic Details
-                                          </NavLink>
-                                       </li>
-                                    </ul>
-                                 </li> */}
+
                                  {user?.role === "ADMIN" && (
                                     <li className="has-child-menu">
                                        <Link
@@ -247,7 +203,7 @@ function Header() {
                                              state.activeMenu === "blog" ? "header-active1" : ""
                                           }
                                        >
-                                          Yo'riqnoma qo'shish
+                                          Yo'riqnoma qo'..
                                        </Link>
                                     </li>
                                  )}
@@ -260,6 +216,16 @@ function Header() {
                                        Contact
                                     </NavLink>
                                  </li>
+                                 {user ? null : (
+                                    <li>
+                                       <NavLink
+                                          className="common-btn btn-style-6"
+                                          to={`${process.env.PUBLIC_URL}/login`}
+                                       >
+                                          Kirish
+                                       </NavLink>
+                                    </li>
+                                 )}
                               </ul>
                               <div className="menu-btn-wrap d-block d-lg-none">
                                  <Link className="common-btn btn-style-1" to={"#"}>
@@ -270,20 +236,35 @@ function Header() {
                         </div>
                         <div className="col-xl-3 col-lg-3 d-none d-lg-block">
                            {isauth ? (
-                              <div style={{ display: "flex", alignItems: "center" }}>
-                                 <Link className="common-btn btn-style-6" to={"/logout"}>
+                              <div
+                                 style={{
+                                    // position: "absolute",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                 }}
+                              >
+                                 <Link
+                                    className="common-btn btn-style-6"
+                                    style={{ marginLeft: "130px" }}
+                                    to={"/logout"}
+                                 >
                                     Logout
                                  </Link>
                                  <h5 style={{ marginLeft: "10px" }}>{user.name}</h5>
                               </div>
                            ) : (
-                              <div className="menu-btn-wrap">
-                                 <Link className="common-btn btn-style-6" to={"/sign-up"}>
+                              <div className="menu-btn-wrap" style={{ width: "320px" }}>
+                                 <Link
+                                    style={{ height: "50px", width: "200px", marginRight: "80px" }}
+                                    className="common-btn btn-style-6"
+                                    to={"/sign-up"}
+                                 >
                                     Ro'yhatdan o'tish
                                  </Link>
-                                 <Link className="common-btn btn-style-6" to={"/login"}>
+                                 {/* <Link className="common-btn btn-style-6" to={"/login"}>
                                     Kirish
-                                 </Link>
+                                 </Link> */}
                                  <div className="menu-toggle-btn">
                                     <ul onClick={handleSidebar}>
                                        <li />
@@ -310,38 +291,30 @@ function Header() {
                      <div className="cross-icon" onClick={handleSidebar}>
                         <i className="bx bx-x" />
                      </div>
-                     <div className="sidebar-logo">
-                        <img
-                           src={process.env.PUBLIC_URL + "/images/icons/sidebar-logo.svg"}
-                           alt="logo"
-                        />
-                     </div>
+                     <div className="sidebar-logo">MagicDocs</div>
                   </div>
                   <div className="sidebar-body">
-                     <h3 className="sidebar-title">
-                        <span>Docbase</span> is a Best Documentation &amp; Knowledge Base Template.
-                     </h3>
                      <div className="sidebar-form-area">
-                        <h5>Subscribe Our Newsletter</h5>
+                        <h5>Ochiq ma'lumotlar portali</h5>
                         <form onSubmit={(e) => e.preventDefault()}>
                            <input type="text" name="name" placeholder="Enter your email" />
-                           <button className="sidebar-btn">Subscribe</button>
+                           <button className="sidebar-btn">Yuborish</button>
                         </form>
                      </div>
                      <div className="sidebar-contact-area">
                         <h3 className="sidebar-contact-title">Contact</h3>
                         <ul>
                            <li>
-                              <h5>Location :</h5>
-                              <p> House#168/170, Road#02, Avenue#01, Mirpur DOHS, Dhaka-1216</p>
+                              <h5>Joylashuv :</h5>
+                              <p> Toshkent </p>
                            </li>
                            <li>
-                              <h5>Phone : :</h5>
-                              <p>+88 1200 1111 222, +02 0011 2233</p>
+                              <h5>Telefon : :</h5>
+                              <p>+998906770959</p>
                            </li>
                            <li>
                               <h5>Email : :</h5>
-                              <p>infosupport@example.com</p>
+                              <p>magicdocs@email.com</p>
                            </li>
                         </ul>
                      </div>

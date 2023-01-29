@@ -7,7 +7,7 @@ export const yoriqId = (id) => async (dispatch) => {
       });
 
       const { data } = await axios.get(
-         `/api/v1/category/${id}`,
+         `http://localhost:8000/api/v1/category/${id}`,
 
          {
             headers: {

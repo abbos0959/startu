@@ -13,14 +13,21 @@ const littlecategory = require("../router/littleRouter");
 const contentRouter = require("../router/content");
 const commentRouter = require("../router/comment");
 const ratingRouter = require("../router/rating");
-
 const levelRouter = require("../router/levelRouter");
+
+app.use(
+   cors({
+      origin: "http://localhost:3000",
+      credentials: true,
+      exposedHeaders: ["Set-Cookie", "Date", "ETag"],
+   })
+);
+
 app.use(express.json());
 // app.use(expressupload());
 app.use(express.static(path.join(__dirname, "../uploads")));
 // app.use(express.urlencoded({ extended: true }));
 app.use(cookie());
-app.use(cors());
 
 app.use("/api/v1", userRouter);
 app.use("/api/v1", bigCategoryRouter);

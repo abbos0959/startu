@@ -7,7 +7,7 @@ export const BosqichId = (id) => async (dispatch) => {
       });
 
       const { data } = await axios.get(
-         `/api/v1/littlecategory/${id}`,
+         `http://localhost:8000/api/v1/littlecategory/${id}`,
 
          {
             headers: {

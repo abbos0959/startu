@@ -54,25 +54,6 @@ function AboutArea() {
                         {...aboutCarousel}
                         className="about-wrap about-wrap-design-2 owl-carousel mb-0"
                      >
-                        {yoriq.map((val) => (
-                           <div className="about-box text-center">
-                              <div className="about-icon">
-                                 <img
-                                    src={
-                                       process.env.PUBLIC_URL + "/images/icons/about-home-2-2.svg"
-                                    }
-                                    alt="aboutIcon"
-                                 />
-                              </div>
-                              <div className="about-content">
-                                 <h3>{val.name}</h3>
-                                 <p>
-                                    It is a long established fact that looking at on this hav’n its
-                                    layout.
-                                 </p>
-                              </div>
-                           </div>
-                        ))}
                         <div className="about-box text-center">
                            <div className="about-icon">
                               <img
@@ -81,9 +62,10 @@ function AboutArea() {
                               />
                            </div>
                            <div className="about-content">
-                              <h3>sabzavot</h3>
+                              <h3>Parrandachilik</h3>
                               <p>
-                                 Sabzavotlarni zararkunandalardan ximoyalash va yaxshi xosil olish
+                                 Uy sharoitida yoki fermangizda parranda boqish haqida uslubiy
+                                 qo'llanma
                               </p>
                            </div>
                         </div>
@@ -95,9 +77,40 @@ function AboutArea() {
                               />
                            </div>
                            <div className="about-content">
-                              <h3>poliz</h3>
+                              <h3>Chorvachilik</h3>
                               <p>
-                                 Poliz mahsulotlaridan yaxshi foydalanish va ularni yaxshi parvarish qilish
+                                 Chorvachilikka oid bo'lgan barcha kerakli ma'lumotlarni biz orqali
+                                 bilib oling
+                              </p>
+                           </div>
+                        </div>
+                        <div className="about-box text-center">
+                           <div className="about-icon">
+                              <img
+                                 src={process.env.PUBLIC_URL + "/images/icons/about-home-2-2.svg"}
+                                 alt="aboutIcon"
+                              />
+                           </div>
+                           <div className="about-content">
+                              <h3>TuyaQushchilik</h3>
+                              <p>
+                                 Tuyaqushchilikka oid bo'lgan barcha kerakli ma'lumotlarni biz orqali
+                                 bilib oling
+                              </p>
+                           </div>
+                        </div>
+                        <div className="about-box text-center">
+                           <div className="about-icon">
+                              <img
+                                 src={process.env.PUBLIC_URL + "/images/icons/about-home-2-2.svg"}
+                                 alt="aboutIcon"
+                              />
+                           </div>
+                           <div className="about-content">
+                              <h3>Qoramolchilik</h3>
+                              <p>
+                                 Qoramolchilikka oid bo'lgan barcha kerakli ma'lumotlarni biz orqali
+                                 bilib oling
                               </p>
                            </div>
                         </div>

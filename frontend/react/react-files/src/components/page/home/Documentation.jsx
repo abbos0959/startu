@@ -10,7 +10,7 @@ function Documentation() {
                   <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                      <div className="section-title text-center mb-50">
                         <h1>Yo'riqnoma</h1>
-                        <p>Yo'riqnomaga amal qilish orqali siz yaxshi xosilga ega bo'lasiz</p>
+                        <p>Yo'riqnomaga amal qilish orqali siz yaxshi natijalarga ega bo'lasiz</p>
                      </div>
                   </div>
                </div>
@@ -33,7 +33,7 @@ function Documentation() {
                                  aria-controls="pills-one"
                                  aria-selected="true"
                               >
-                                 Pamidor
+                                 Chorvachilik
                               </button>
                            </li>
                            <li className="nav-item" role="presentation">
@@ -47,7 +47,7 @@ function Documentation() {
                                  aria-controls="pills-two"
                                  aria-selected="false"
                               >
-                                 Bodring
+                                 Parrandachilik
                               </button>
                            </li>
                            <li className="nav-item" role="presentation">
@@ -61,7 +61,7 @@ function Documentation() {
                                  aria-controls="pills-three"
                                  aria-selected="false"
                               >
-                                 Paxta
+                                 Tuyaqushchilik
                               </button>
                            </li>
                            <li className="nav-item" role="presentation">
@@ -75,7 +75,7 @@ function Documentation() {
                                  aria-controls="pills-four"
                                  aria-selected="false"
                               >
-                                 G'alla
+                                 Qoramolchilik
                               </button>
                            </li>
                         </ul>
@@ -89,6 +89,9 @@ function Documentation() {
                               <div className="row g-4">
                                  <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                     <DocumentationCard
+                                       text=" Respublikamizda qorakoʼl qoʼy zotlaridan jaydari, hisor zotlari va goʼshtdorserjun
+                                    zot guruhlari urchitib koʼpaytirilmoqda. Ushbu zotlarning har biri oʼzining muhim
+                                    biologik va xoʼjalik foydali belgilariga ega boʼladi"
                                        icon="/images/icons/doc-icon-1.svg"
                                        cardTitle="Footnotes"
                                        cardNumber="01"
@@ -96,6 +99,9 @@ function Documentation() {
                                  </div>
                                  <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                     <DocumentationCard
+                                       text="Oʼzbekistonning goʼshtdor-serjun (halq tilida-malish) qoʼylarning zot
+                                    guruxlarini yaratish ishlari oʼtgan asrning ikkinchi yarmida yaʼni 1953-1954 yillardan
+                                    boshlangan boʼlib"
                                        icon="/images/icons/doc-icon-2.svg"
                                        cardTitle="Copyright & Legal"
                                        cardNumber="02"
@@ -103,32 +109,17 @@ function Documentation() {
                                  </div>
                                  <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                     <DocumentationCard
+                                       text="Hisor zotli qoʼylar. xalq selektsiyasida Tojikistonda yaratilgan zot boʼlib,
+                                    asosan Tojikistonda va Respublikamizning                              Surxondaryo va Qashqadaryo viloyatlarida keng
+                                    tarqalgan zotdir"
                                        icon="/images/icons/doc-icon-3.svg"
                                        cardTitle="Layo Getting Start"
                                        cardNumber="03"
                                     />
                                  </div>
-                                 <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                    <DocumentationCard
-                                       icon="/images/icons/doc-icon-4.svg"
-                                       cardTitle="Api Questions"
-                                       cardNumber="04"
-                                    />
-                                 </div>
-                                 <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                    <DocumentationCard
-                                       icon="/images/icons/doc-icon-5.svg"
-                                       cardTitle="Accound Settings"
-                                       cardNumber="05"
-                                    />
-                                 </div>
-                                 <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                    <DocumentationCard
-                                       icon="/images/icons/doc-icon-6.svg"
-                                       cardTitle="Backend Develop"
-                                       cardNumber="06"
-                                    />
-                                 </div>
+                                 <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12"></div>
+                                 <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12"></div>
+                                 <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12"></div>
                               </div>
                            </div>
                            <div
@@ -140,44 +131,33 @@ function Documentation() {
                               <div className="row g-4">
                                  <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                     <DocumentationCard
-                                       icon="/images/icons/doc-icon-1.svg"
-                                       cardTitle="Footnotes"
-                                       cardNumber="07"
+                                       text="Tovuqlar ratsionida energiyaning asosiy manbai boʼlib donli ozuqalar
+                                    (makkajoʼxori, bugʼdoy, oqjoʼxori, arpa, suli), yogʼli ozuqalar, makkajoʼxoriga
+                                    ishlov berish chiqindilari, oʼsimlik yogʼlari 
+                                   ."
+                                       icon="/images/icons/doc-icon-4.svg"
+                                       cardTitle="Api Questions"
+                                       cardNumber="04"
                                     />
                                  </div>
                                  <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                     <DocumentationCard
-                                       icon="/images/icons/doc-icon-2.svg"
-                                       cardTitle="Copyright & Legal"
-                                       cardNumber="02"
-                                    />{" "}
+                                       text="Tuxum vaznining yuqori boʼlishi ratsiondagi xom protein (oqsil),
+                                    linolevaya kislotasi va metionin moddalarining miqdor darajasiga
+                                    toʼgʼridan toʼgʼri bogʼliq boʼladi."
+                                       icon="/images/icons/doc-icon-5.svg"
+                                       cardTitle="Accound Settings"
+                                       cardNumber="05"
+                                    />
                                  </div>
                                  <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                     <DocumentationCard
+                                       text="Suv taʼminoti-parrandadan yuqori mahsulot olishda nafaqat yuqori
+                                    sifatli va toʼyimli muvozanatlashtirilgan ozuqalar kerak boʼladi, balki
+                                    toza ichimlik suvi ham katta ahamiyatga egadir."
                                        icon="/images/icons/doc-icon-3.svg"
                                        cardTitle="Layo Getting Start"
                                        cardNumber="03"
-                                    />
-                                 </div>
-                                 <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                    <DocumentationCard
-                                       icon="/images/icons/doc-icon-4.svg"
-                                       cardTitle="Api Questions"
-                                       cardNumber="08"
-                                    />
-                                 </div>
-                                 <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                    <DocumentationCard
-                                       icon="/images/icons/doc-icon-5.svg"
-                                       cardTitle="Accound Settings"
-                                       cardNumber="09"
-                                    />
-                                 </div>
-                                 <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                    <DocumentationCard
-                                       icon="/images/icons/doc-icon-6.svg"
-                                       cardTitle="Backend Develop"
-                                       cardNumber="10"
                                     />
                                  </div>
                               </div>
@@ -191,6 +171,10 @@ function Documentation() {
                               <div className="row g-4">
                                  <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                     <DocumentationCard
+                                       text="Tuyaqush biologiyasi-tuyaqushlar etxoʼr parranda emas, asosan turli oʼtlar
+                                    bilan oziqlanadi. Yana bir oʼziga xos xususiyatlaridan biri jigʼildonini (zob)
+                                    yoʼqligidir. Dastlab ozuqa oshqozon oldi kamersida toʼplanib, keyin qalin
+                                    devorlari mavjud katta oshqozonga tushadi."
                                        icon="/images/icons/doc-icon-1.svg"
                                        cardTitle="Footnotes"
                                        cardNumber="07"
@@ -198,6 +182,10 @@ function Documentation() {
                                  </div>
                                  <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                     <DocumentationCard
+                                       text="Jinsiy voyaga urgʼochisi 3 yoshda, erkagi 4 yoshda yetiladi. Tuyaqushlar
+                                    fermada boqilganda oddiy tarzda, yetarli darajada oziqlantirilganda
+                                    urgʼochilari 1,5-2 yillik yoshida oʼnlab tuxum qilishi mumkin, shundan bir qismi
+                                    urugʼlantirilgan tuxum boʼladi."
                                        icon="/images/icons/doc-icon-2.svg"
                                        cardTitle="Copyright & Legal"
                                        cardNumber="02"
@@ -205,30 +193,13 @@ function Documentation() {
                                  </div>
                                  <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                     <DocumentationCard
+                                       text="Tuyaqushchilik fermasini barpo etishni eng qimmat, shu bilan birga eng
+                                    oddiy usuli bu koʼpayishga tayyor katta yoshdagi tuyaqushlarni sotib olish. Katta
+                                    yoshdagi tuyaqushlarni sotib olishda yaxshisi 1 bosh erkak tuyaqushga 2 bosh urgʼochisi
+                                    sotib olinsa maqsadga muvofiq boʼladi."
                                        icon="/images/icons/doc-icon-3.svg"
                                        cardTitle="Layo Getting Start"
                                        cardNumber="03"
-                                    />
-                                 </div>
-                                 <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                    <DocumentationCard
-                                       icon="/images/icons/doc-icon-4.svg"
-                                       cardTitle="Api Questions"
-                                       cardNumber="08"
-                                    />
-                                 </div>
-                                 <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                    <DocumentationCard
-                                       icon="/images/icons/doc-icon-5.svg"
-                                       cardTitle="Accound Settings"
-                                       cardNumber="09"
-                                    />
-                                 </div>
-                                 <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                    <DocumentationCard
-                                       icon="/images/icons/doc-icon-6.svg"
-                                       cardTitle="Backend Develop"
-                                       cardNumber="10"
                                     />
                                  </div>
                               </div>
@@ -242,6 +213,10 @@ function Documentation() {
                               <div className="row g-4">
                                  <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                     <DocumentationCard
+                                       text="2015 yilda sof zotli Blanka 54 laqabli rekordchi sigirdan 3,9 foiz
+                                    yog‘lilikda 10 ming 600 kg. sut sog‘ib olingan.
+                                    Mazkur zotga mansub sigirlarning o‘rtacha sut mahsuldorligi 3100-3400
+                                    kg., sut tarkibidagi yog‘ miqdori 4,0 foiz va undan yuqori."
                                        icon="/images/icons/doc-icon-1.svg"
                                        cardTitle="Footnotes"
                                        cardNumber="01"
@@ -249,6 +224,9 @@ function Documentation() {
                                  </div>
                                  <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                     <DocumentationCard
+                                       text="Sigirlarni sersut qilish. Bunda ushbu tadbir 90-100 kun davomida
+                                    o‘tkaziladi. Sigirlar shu davrda laktatsiya davomida beradigan sutining
+                                    40-50 foizini berishga, sutini ko‘paytirishiga moyil bo‘ladi."
                                        icon="/images/icons/doc-icon-2.svg"
                                        cardTitle="Copyright & Legal"
                                        cardNumber="02"
@@ -256,30 +234,12 @@ function Documentation() {
                                  </div>
                                  <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                     <DocumentationCard
+                                       text="Ratsion tarkibida 24,0 foiz dag‘al, 45,0 foiz shirali va 31,34 foiz yem
+                                    ozuqalar bo‘lib, bu nisbat sigirlarning ozuqalarni ishtaha bilan yeyishi va
+                                    uning hazm bo‘lishining biologik xususiyatlariga juda mos tushadi."
                                        icon="/images/icons/doc-icon-3.svg"
                                        cardTitle="Layo Getting Start"
                                        cardNumber="03"
-                                    />
-                                 </div>
-                                 <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                    <DocumentationCard
-                                       icon="/images/icons/doc-icon-4.svg"
-                                       cardTitle="Api Questions"
-                                       cardNumber="04"
-                                    />
-                                 </div>
-                                 <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                    <DocumentationCard
-                                       icon="/images/icons/doc-icon-5.svg"
-                                       cardTitle="Accound Settings"
-                                       cardNumber="05"
-                                    />
-                                 </div>
-                                 <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                    <DocumentationCard
-                                       icon="/images/icons/doc-icon-6.svg"
-                                       cardTitle="Backend Develop"
-                                       cardNumber="06"
                                     />
                                  </div>
                               </div>

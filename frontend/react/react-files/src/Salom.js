@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 // layout pages
@@ -25,13 +25,19 @@ import ContactPage from "./components/page/contact/ContactPage";
 import { YoriqnomaAdd } from "./components/common/YoriqnomaAdd";
 import { loadUser } from "./components/Actions/User";
 import { loadYoriq } from "./components/Actions/Yoriq";
+import JobTable from "./components/common/Job/JobTable";
+import Texnika from "./components/common/Texnika/Texnika";
+import YerTable from "./components/common/Yer/Yerlar";
+import Naslchilik from "./components/common/Naslchilik/Naslchilik";
+
 function Salom() {
    const dispatch = useDispatch();
 
-   useEffect(() => {
-      dispatch(loadUser());
-      dispatch(loadYoriq());
-   }, []);
+   // useEffect(() => {
+   //    dispatch(loadUser());
+   //    dispatch(loadYoriq());
+   // }, []);
+
    return (
       <BrowserRouter basename="/">
          <Switch>
@@ -83,6 +89,10 @@ function Salom() {
                   component={BlogDetailsPage}
                />
                <Route exact path={`${process.env.PUBLIC_URL}/contact`} component={ContactPage} />
+               <Route path={`${process.env.PUBLIC_URL}/texnika`} component={<h1>salom</h1>} />
+               <Route path={`${process.env.PUBLIC_URL}/ish`} component={JobTable} />
+               <Route path={`${process.env.PUBLIC_URL}/tex`} component={Texnika} />
+               {/* <Route path={`${process.env.PUBLIC_URL}/chorva`} component={Naslchilik} /> */}
             </InnerPageLayout>
          </Switch>
       </BrowserRouter>
