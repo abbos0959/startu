@@ -11,14 +11,12 @@ export const loginUser = (email, password, history) => async (dispatch) => {
       });
 
       const { data } = await axios.post(
-         "http://localhost:5000/api/v1/login",
+         "http://176.96.241.177:5000/api/v1/login",
          { email, password },
          {
             withCredentials: true,
          }
       );
-      console.log(data);
-
       dispatch({
          type: "LoginSuccess",
          payload: data.user,
@@ -42,7 +40,7 @@ export const loadUser = () => async (dispatch) => {
       });
 
       const { data } = await axios.get(
-         "http://localhost:5000/api/v1/me",
+         "http://176.96.241.177:5000/api/v1/me",
 
          {
             headers: {
@@ -71,7 +69,7 @@ export const registerUser = (name, email, password, photo) => async (dispatch) =
       });
 
       const { data } = await axios.post(
-         "http://localhost:5000/api/v1/register",
+         "http://176.96.241.177:5000/api/v1/register",
          { name, email, password, photo },
          {
             headers: {

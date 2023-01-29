@@ -3,9 +3,10 @@ import Select from "react-select";
 
 function MainBanner() {
    const optionsForSearch = [
-      { value: "1", label: "All" },
-      { value: "2", label: "All1" },
-      { value: "3", label: "All2" },
+      { value: "1", label: "Chorvachilik" },
+      { value: "2", label: "Parrandachilik" },
+      { value: "3", label: "Tuyaqushchilik" },
+      { value: "3", label: "Qoramolchilik" },
    ];
 
    return (
