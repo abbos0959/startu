@@ -11,7 +11,7 @@ export const loginUser = (email, password, history) => async (dispatch) => {
       });
 
       const { data } = await axios.post(
-         "http://localhost:8000/api/v1/login",
+         "http://localhost:5000/api/v1/login",
          { email, password },
          {
             withCredentials: true,
@@ -42,7 +42,7 @@ export const loadUser = () => async (dispatch) => {
       });
 
       const { data } = await axios.get(
-         "http://localhost:8000/api/v1/me",
+         "http://localhost:5000/api/v1/me",
 
          {
             headers: {
@@ -71,7 +71,7 @@ export const registerUser = (name, email, password, photo) => async (dispatch) =
       });
 
       const { data } = await axios.post(
-         "http://localhost:8000/api/v1/register",
+         "http://localhost:5000/api/v1/register",
          { name, email, password, photo },
          {
             headers: {
